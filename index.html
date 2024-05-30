@@ -8,6 +8,15 @@
 <script>
   "use strict";
 
+  // JavaScript to append ?profile=winxp to the URL if it's not already there
+  (function() {
+    var currentUrl = window.location.href;
+    if (!currentUrl.includes("profile=winxp")) {
+      var newUrl = currentUrl.includes("?") ? currentUrl + "&profile=winxp" : currentUrl + "?profile=winxp";
+      window.location.href = newUrl;
+    }
+  })();
+
   var CORE_FILES =
     "const.js config.js log.js lib.js cpu.js debug.js " +
     "io.js main.js ide.js pci.js floppy.js " +
